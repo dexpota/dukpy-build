@@ -22,13 +22,13 @@ jobs:
 
       - name: Clone dukpy repository
         run:
-          git clone https://github.com/amol-/dukpy.git .
+          git clone https://github.com/amol-/dukpy.git dukpy
 
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.11.3
 
       - name: Build wheels
-        run: python -m cibuildwheel --output-dir wheelhouse
+        run: python -m cibuildwheel --output-dir wheelhouse dukpy
         env:
           CIBW_ARCHS_MACOS: "x86_64 arm64 universal2"
 
